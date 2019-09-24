@@ -15,14 +15,14 @@ public class NomeValidatorTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    private static final NomeValidator NOME_VALIDATOR = new NomeValidator();
+    private static final NomeValidator nomeValidator = new NomeValidator();
 
     @Test
     public void validateShouldThrowExceptionWhenNomeIsNull() throws NomeInvalidoException {
         expectedException.expect(NomeInvalidoException.class);
         expectedException.expectMessage(Mensagens.NOME_NULO);
 
-        NOME_VALIDATOR.validate(null);
+        nomeValidator.validate(null);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class NomeValidatorTest {
         expectedException.expect(NomeInvalidoException.class);
         expectedException.expectMessage(Mensagens.NOME_CARACTER_INVALIDO);
 
-        NOME_VALIDATOR.validate(INVALID_NOME_ESPECIAL);
+        nomeValidator.validate(INVALID_NOME_ESPECIAL);
     }
 
     @Test
@@ -38,12 +38,12 @@ public class NomeValidatorTest {
         expectedException.expect(NomeInvalidoException.class);
         expectedException.expectMessage(Mensagens.NOME_CARACTER_INVALIDO);
 
-        NOME_VALIDATOR.validate(INVALID_NOME_TAMANHO);
+        nomeValidator.validate(INVALID_NOME_TAMANHO);
     }
 
     @Test
     public void validateShouldSuccessWhenNomeIsValid() throws NomeInvalidoException {
-        NOME_VALIDATOR.validate(VALID_NOME);
+        nomeValidator.validate(VALID_NOME);
     }
 
 }

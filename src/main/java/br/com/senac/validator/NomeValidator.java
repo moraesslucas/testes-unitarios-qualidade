@@ -13,7 +13,7 @@ public class NomeValidator implements Validator<String> {
             throw new NomeInvalidoException(Mensagens.NOME_NULO);
         }
 
-        if (!criteria.matches("^[A-z][0-9]*")) {
+        if (!criteria.matches("^[A-z0-9 ]*")) {
             throw new NomeInvalidoException(Mensagens.NOME_CARACTER_INVALIDO);
         }
 

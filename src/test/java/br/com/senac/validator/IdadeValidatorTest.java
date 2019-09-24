@@ -15,14 +15,14 @@ public class IdadeValidatorTest {
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    private static final IdadeValidator IDADE_VALIDATOR = new IdadeValidator();
+    private static final IdadeValidator idadeValidator = new IdadeValidator();
 
     @Test
     public void validateShouldThrowExceptionWhenNomeIsNull() throws IdadeInvalidaException {
         expectedException.expect(IdadeInvalidaException.class);
         expectedException.expectMessage(Mensagens.IDADE_NULA);
 
-        IDADE_VALIDATOR.validate(null);
+        idadeValidator.validate(null);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class IdadeValidatorTest {
         expectedException.expect(IdadeInvalidaException.class);
         expectedException.expectMessage(Mensagens.IDADE_NAO_NUMERICA);
 
-        IDADE_VALIDATOR.validate(INVALID_IDADE_LETRA);
+        idadeValidator.validate(INVALID_IDADE_LETRA);
     }
 
     @Test
@@ -38,12 +38,12 @@ public class IdadeValidatorTest {
         expectedException.expect(IdadeInvalidaException.class);
         expectedException.expectMessage(Mensagens.IDADE_INVALIDA);
 
-        IDADE_VALIDATOR.validate(INVALID_IDADE_TAMANHO);
+        idadeValidator.validate(INVALID_IDADE_TAMANHO);
     }
 
     @Test
     public void validateShouldSuccessWhenIdadeIsValid() throws IdadeInvalidaException {
-        IDADE_VALIDATOR.validate(VALID_IDADE);
+        idadeValidator.validate(VALID_IDADE);
     }
 
 }

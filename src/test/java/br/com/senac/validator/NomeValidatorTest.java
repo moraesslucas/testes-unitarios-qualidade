@@ -2,6 +2,7 @@ package br.com.senac.validator;
 
 import br.com.senac.exception.NomeInvalidoException;
 import br.com.senac.util.Mensagens;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
@@ -11,7 +12,8 @@ public class NomeValidatorTest {
     private static final String INVALID_NOME_TAMANHO = "Nome muito grande deve gerar erro ao testar";
     private static final String VALID_NOME = "Carlos Nome";
 
-    private final ExpectedException expectedException = ExpectedException.none();
+    @Rule
+    public final ExpectedException expectedException = ExpectedException.none();
 
     private static final NomeValidator nomeValidator = new NomeValidator();
 

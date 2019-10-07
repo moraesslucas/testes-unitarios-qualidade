@@ -12,6 +12,7 @@ public class NomeValidatorTest {
     private static final String INVALID_NOME_TAMANHO = "Nome muito grande deve gerar erro ao testar";
     private static final String VALID_NOME = "Carlos Nome";
 
+    @Rule
     public final ExpectedException expectedException = ExpectedException.none();
 
     private static final NomeValidator nomeValidator = new NomeValidator();

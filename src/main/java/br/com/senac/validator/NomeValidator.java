@@ -29,7 +29,7 @@ public class NomeValidator implements Validator<String> {
             throw new NomeInvalidoException(Mensagens.NOME_TAMANHO_INVALIDO);
         }
 
-        if (Objects.isNull(nomeService.findAll()) || !nomeService.findAll().contains(criteria)) {
+        if (Objects.nonNull(nomeService.findAll()) && !nomeService.findAll().contains(criteria)) {
             throw new NomeInvalidoException(Mensagens.NOME_NAO_PERMITIDO);
         }
     }

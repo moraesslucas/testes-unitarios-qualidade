@@ -11,6 +11,7 @@ public class Mensagens {
     public static final String NOME_NULO = "O nome da pessoa não pode ser nulo.";
     public static final String NOME_CARACTER_INVALIDO = "O nome da pessoa contém caracteres inválidos, apenas caracteres alfa-numéricos são aceitos.";
     public static final String NOME_TAMANHO_INVALIDO = "O nome da pessoa deve conter entre 0 e 40 caracteres.";
+    public static final String NOME_NAO_PERMITIDO = "O nome da pessoa não é permitido pois deve estar entre os padrões de nome disponíveis.";
 
     public static final String IDADE_NULA = "A idade da pessoa deve ser informada.";
     public static final String IDADE_INVALIDA = "A idade informada não é válida, informe até 2 caracteres.";

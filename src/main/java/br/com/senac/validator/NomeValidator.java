@@ -1,14 +1,22 @@
 package br.com.senac.validator;
 
 import br.com.senac.exception.NomeInvalidoException;
+import br.com.senac.service.NomeService;
+import br.com.senac.service.NomeServiceImpl;
 import br.com.senac.util.Mensagens;
 
 import java.util.Objects;
 
 public class NomeValidator implements Validator<String> {
 
+    private final NomeService nomeService;
+
+    public NomeValidator() {
+        this.nomeService = new NomeServiceImpl();
+    }
+
     @Override
-    public void validate(String criteria) {
+    public void validate(String criteria) throws NomeInvalidoException {
         if (Objects.isNull(criteria)) {
             throw new NomeInvalidoException(Mensagens.NOME_NULO);
         }
@@ -19,6 +27,10 @@ public class NomeValidator implements Validator<String> {
 
         if (criteria.length() > 40) {
             throw new NomeInvalidoException(Mensagens.NOME_TAMANHO_INVALIDO);
+        }
+
+        if (Objects.isNull(nomeService.findAll()) || !nomeService.findAll().contains(criteria)) {
+            throw new NomeInvalidoException(Mensagens.NOME_NAO_PERMITIDO);
         }
     }
 

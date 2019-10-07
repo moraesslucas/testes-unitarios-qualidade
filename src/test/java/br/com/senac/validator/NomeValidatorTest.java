@@ -33,7 +33,7 @@ public class NomeValidatorTest {
 //  metodo deve ter sucesso quando nome for válido
     @Test
     public void validateShouldSuccessWhenNomeIsValid() {
-
+        nomeValidator.validate(VALID_NOME);
     }
 
 }

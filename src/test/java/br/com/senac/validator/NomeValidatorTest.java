@@ -36,7 +36,7 @@ public class NomeValidatorTest {
     @Test
     public void validateShouldThrowExceptionWhenNomeSizeIsGreaterThan40() throws NomeInvalidoException {
         expectedException.expect(NomeInvalidoException.class);
-        expectedException.expectMessage(Mensagens.NOME_CARACTER_INVALIDO);
+        expectedException.expectMessage(Mensagens.NOME_TAMANHO_INVALIDO);
 
         nomeValidator.validate(INVALID_NOME_TAMANHO);
     }

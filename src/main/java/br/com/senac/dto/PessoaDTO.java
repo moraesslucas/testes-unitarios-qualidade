@@ -11,7 +11,7 @@ import lombok.Setter;
 public class PessoaDTO {
 
     private String nome;
-    private String idade;
-    private String sexo;
+    private Integer idade;
+    private SexoEnum sexo;
 
 }

@@ -12,38 +12,28 @@ public class NomeValidatorTest {
     private static final String INVALID_NOME_TAMANHO = "Nome muito grande deve gerar erro ao testar";
     private static final String VALID_NOME = "Carlos Nome";
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
-
     private static final NomeValidator nomeValidator = new NomeValidator();
 
+//  metodo deve jogar exceção quando nome for nulo
     @Test
-    public void validateShouldThrowExceptionWhenNomeIsNull() throws NomeInvalidoException {
-        expectedException.expect(NomeInvalidoException.class);
-        expectedException.expectMessage(Mensagens.NOME_NULO);
-
-        nomeValidator.validate(null);
+    public void validateShouldThrowExceptionWhenNomeIsNull() {
     }
 
+//  metodo deve jogar exceção quando nome não for alfanumérico
     @Test
-    public void validateShouldThrowExceptionWhenNomeIsNotAlphaNumeric() throws NomeInvalidoException {
-        expectedException.expect(NomeInvalidoException.class);
-        expectedException.expectMessage(Mensagens.NOME_CARACTER_INVALIDO);
-
-        nomeValidator.validate(INVALID_NOME_ESPECIAL);
+    public void validateShouldThrowExceptionWhenNomeIsNotAlphaNumeric() {
     }
 
-    @Test
-    public void validateShouldThrowExceptionWhenNomeSizeIsGreaterThan40() throws NomeInvalidoException {
-        expectedException.expect(NomeInvalidoException.class);
-        expectedException.expectMessage(Mensagens.NOME_TAMANHO_INVALIDO);
 
-        nomeValidator.validate(INVALID_NOME_TAMANHO);
+//  metodo deve jogar exceção quando tamanho do parâmetro for maior que 40
+    @Test
+    public void validateShouldThrowExceptionWhenNomeSizeIsGreaterThan40() {
     }
 
+//  metodo deve ter sucesso quando nome for válido
     @Test
-    public void validateShouldSuccessWhenNomeIsValid() throws NomeInvalidoException {
-        nomeValidator.validate(VALID_NOME);
+    public void validateShouldSuccessWhenNomeIsValid() {
+
     }
 
 }

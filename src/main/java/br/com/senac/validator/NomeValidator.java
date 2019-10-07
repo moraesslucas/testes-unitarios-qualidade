@@ -8,7 +8,7 @@ import java.util.Objects;
 public class NomeValidator implements Validator<String> {
 
     @Override
-    public void validate(String criteria) throws NomeInvalidoException {
+    public void validate(String criteria) {
         if (Objects.isNull(criteria)) {
             throw new NomeInvalidoException(Mensagens.NOME_NULO);
         }

@@ -8,8 +8,8 @@ public class NomeServiceImpl implements NomeService {
 
     private final NomeRepository nomeRepository;
 
-    public NomeServiceImpl() {
-        this.nomeRepository = new NomeRepository();
+    public NomeServiceImpl(NomeRepository nomeRepository) {
+        this.nomeRepository = nomeRepository;
     }
 
     @Override

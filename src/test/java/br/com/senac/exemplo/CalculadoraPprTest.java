@@ -28,4 +28,24 @@ public class CalculadoraPprTest {
 
         assertEquals(6000.0d, calculadoraPpr.calcular(funcionario), 2);
     }
+
+
+
+
+
+
+
+
+
+    
+
+    /*
+    @Test
+    public void pprDeveSerSalarioMultiplicadoPelaMetrica() {
+        for (SenioridadeEnum senioridade : SenioridadeEnum.values()) {
+            Funcionario funcionario = new Funcionario(senioridade, 1000.0d);
+
+            assertEquals(1000.0d * senioridade.getMetricaPpr(), calculadoraPpr.calcular(funcionario), 1000.0d);
+        }
+    }*/
 }

@@ -2,7 +2,6 @@ package br.com.senac.validator;
 
 import br.com.senac.exception.NomeInvalidoException;
 import br.com.senac.service.NomeService;
-import br.com.senac.service.NomeServiceImpl;
 import br.com.senac.util.Mensagens;
 
 import java.util.Objects;
@@ -11,8 +10,8 @@ public class NomeValidator implements Validator<String> {
 
     private final NomeService nomeService;
 
-    public NomeValidator() {
-        this.nomeService = new NomeServiceImpl();
+    public NomeValidator(NomeService nomeService) {
+        this.nomeService = nomeService;
     }
 
     @Override
